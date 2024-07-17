@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgowk4a2puick"]
+[gd_scene load_steps=3 format=3 uid="uid://cgowk4a2puick"]
 
 [ext_resource type="PackedScene" uid="uid://b5jnur3swvw1y" path="res://scenes/player.tscn" id="1_4omqd"]
+[ext_resource type="PackedScene" uid="uid://ihvoifn63k6t" path="res://scenes/meteor_spawner.tscn" id="2_rwais"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_4omqd")]
 position = Vector2(226, 606)
+
+[node name="MeteorSpawner" parent="." instance=ExtResource("2_rwais")]

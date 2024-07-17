@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgowk4a2puick"]
+[gd_scene load_steps=4 format=3 uid="uid://cgowk4a2puick"]
 
 [ext_resource type="PackedScene" uid="uid://b5jnur3swvw1y" path="res://scenes/player.tscn" id="1_4omqd"]
+[ext_resource type="Texture2D" uid="uid://cbxl12lcqm4c" path="res://assets/background.png" id="1_sdv8y"]
 [ext_resource type="PackedScene" uid="uid://ihvoifn63k6t" path="res://scenes/meteor_spawner.tscn" id="2_rwais"]
 
 [node name="Main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 425.0
+offset_bottom = 655.0
+texture = ExtResource("1_sdv8y")
+stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_4omqd")]
 position = Vector2(226, 606)

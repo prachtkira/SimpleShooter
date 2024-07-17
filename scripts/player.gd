@@ -1,15 +1,17 @@
 extends CharacterBody2D
 
 @export var movementSpeed : int = 100
+var bulletScene = preload("res://scenes/bullet.tscn")
+@onready var bulletNode = $BulletNode
 
 func _process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 
 func shoot():
-	var bulletScene = preload("res://scenes/bullet.tscn")
 	var bulletInstance = bulletScene.instantiate()
-	add_child(bulletInstance)
+	bulletNode.add_child(bulletInstance)
+	bulletInstance.global_position = global_position
 	bulletInstance.global_position.y -= 65
 
 func _physics_process(delta):

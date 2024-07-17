@@ -18,3 +18,9 @@ texture = ExtResource("1_8yckk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_vos06")
+
+[node name="BulletNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 11)
+scale = Vector2(0.2, 0.075)
+
+[connection signal="screen_exited" from="BulletNotifier" to="." method="_on_bullet_notifier_screen_exited"]

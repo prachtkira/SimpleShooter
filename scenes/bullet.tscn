@@ -7,6 +7,8 @@
 size = Vector2(4, 28)
 
 [node name="Bullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_wn5tw")
 bulletSpeed = 400
 
@@ -23,4 +25,5 @@ shape = SubResource("RectangleShape2D_vos06")
 position = Vector2(0, 11)
 scale = Vector2(0.2, 0.075)
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="BulletNotifier" to="." method="_on_bullet_notifier_screen_exited"]

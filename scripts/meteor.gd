@@ -4,3 +4,6 @@ extends Area2D
 
 func _physics_process(delta):
 	global_position.y += meteorSpeed*delta
+
+func destroyMeteor():
+	queue_free()

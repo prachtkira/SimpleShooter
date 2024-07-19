@@ -14,8 +14,10 @@ size = Vector2(41.4749, 15.811)
 size = Vector2(42.1371, 15.4434)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_y0lic")
+movementSpeed = 250
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

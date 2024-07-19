@@ -12,7 +12,7 @@ offset_bottom = 655.0
 texture = ExtResource("1_sdv8y")
 stretch_mode = 1
 
-[node name="Player" parent="." instance=ExtResource("1_4omqd")]
-position = Vector2(226, 606)
-
 [node name="MeteorSpawner" parent="." instance=ExtResource("2_rwais")]
+
+[node name="Player" parent="." instance=ExtResource("1_4omqd")]
+position = Vector2(210, 606)

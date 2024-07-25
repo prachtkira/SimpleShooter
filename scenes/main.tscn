@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgowk4a2puick"]
+[gd_scene load_steps=6 format=3 uid="uid://cgowk4a2puick"]
 
 [ext_resource type="PackedScene" uid="uid://b5jnur3swvw1y" path="res://scenes/player.tscn" id="1_4omqd"]
 [ext_resource type="Texture2D" uid="uid://cbxl12lcqm4c" path="res://assets/background.png" id="1_sdv8y"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_sknjx"]
 [ext_resource type="PackedScene" uid="uid://ihvoifn63k6t" path="res://scenes/meteor_spawner.tscn" id="2_rwais"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqk0c"]
+size = Vector2(463.5, 20)
+
 [node name="Main" type="Node2D"]
+script = ExtResource("1_sknjx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 425.0
@@ -16,3 +21,14 @@ stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_4omqd")]
 position = Vector2(210, 606)
+
+[node name="Despawn" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Despawn"]
+position = Vector2(212, 699)
+shape = SubResource("RectangleShape2D_jqk0c")
+
+[connection signal="tookDamage" from="Player" to="." method="_on_player_took_damage"]
+[connection signal="area_entered" from="Despawn" to="." method="_on_despawn_area_entered"]

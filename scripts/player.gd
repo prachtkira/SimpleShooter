@@ -4,6 +4,8 @@ extends CharacterBody2D
 var bulletScene = preload("res://scenes/bullet.tscn")
 @onready var bulletNode = $BulletNode
 
+signal tookDamage
+
 func _process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
@@ -31,3 +33,6 @@ func _physics_process(delta):
 	
 	var screenSize = get_viewport_rect().size
 	global_position = global_position.clamp(Vector2(0,0), screenSize)
+
+func takeDamage():
+	emit_signal("tookDamage")
